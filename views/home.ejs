@@ -1,0 +1,35 @@
+<%- include("./includes/top") %>
+
+<div class="container">
+    <h1>My Resume</h1>
+    <div class="links">
+        <a href="/personal" class=<%=arr.includes('personal')?"done":"" %>>Personal information</a>
+        <a href="/skill" class=<%=arr.includes('skill')?"done":"" %>>Skills</a>
+        <a href="/summary" class=<%=arr.includes('summary')?"done":"" %>>Professional summary</a>
+        <a href="/education" class=<%=arr.includes('education')?"done":"" %>>Educational background</a>
+        <a href="/experience" class=<%=arr.includes('experience')?"done":"" %>>Experience/projects</a>
+        <a href="/achievement" class=<%=arr.includes('achievement')?"done":"" %>>Achievements</a>
+        <button><a href="/build-resume">Generate</a></button>
+        <button><a href="/clear-resume">Clear data</a></button>
+
+    </div>
+    <% if(link=='skill'){%>
+        <%- include("skill.ejs") %>
+    <% } %>
+    <% if(link=='education'){%>
+        <%- include("education.ejs") %>
+    <% } %>
+    <% if(link=='experience'){%>
+        <%- include("experience.ejs") %>
+    <% } %>
+    <% if(link=='personal'){%>
+        <%- include("personal.ejs") %>
+    <% } %>
+    <% if(link=='summary'){%>
+        <%- include("summary.ejs") %>
+    <% } %>
+    <% if(link=='achievements'){%>
+        <%- include("achievement.ejs") %>
+    <% } %>
+</div>
+<%- include("./includes/bottom") %>

@@ -1,0 +1,39 @@
+<div class="main-box">
+    <a href="/"></a>
+    <div class="box">
+        <h2>PERSONAL INFORMATION</h2>
+        <div class="input-box">
+            <label for="">Enter your name</label>
+            <div class="input-box-btn">
+                <input type="text" name="name" id="" class="input1" value="<%= data?data[0].name:'' %>">
+            </div>
+        </div>
+        <div class="input-box">
+            <label for="">Enter your email</label>
+            <div class="input-box-btn">
+                <input type="text" name="email" id="" class="input1" value="<%= data?data[0].email:'' %>">
+            </div>
+        </div>
+        <div class="input-box">
+            <label for="">Enter your phone</label>
+            <div class="input-box-btn">
+                <input type="text" name="phone" id="" class="input1" value="<%= data?data[0].phone:'' %>">
+            </div>
+        </div>
+        <div class="input-box">
+            <label for="">Enter link to your profile (github/linkedin/insta etc)</label>
+            <div class="input-box-btn">
+                <input type="text" name="profileLink" id="" class="input1" value="<%= data?data[0].profileLink:'' %>">
+            </div>
+        </div>
+        <div class="input-box">
+            <label for="">Enter valid url of your image</label>
+            <div class="input-box-btn">
+                <input type="text" name="imageUrl" id="" class="input1" value="<%= data?data[0].imageUrl:'' %>">
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="btn" onclick="saveEducation(1,'personal')">Save</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="main-box">
+    <a href="/"></a>
+    <div class="box">
+        <h2>Education</h2>
+        <!-- <form action="" method=""> -->
+        <div id="educationForm">
+            <% num.forEach((e,i)=>{ %>
+                
+               <% if(i>0) { %><hr><%}%>
+               <main>
+                <div class="input-box">
+                    <label for="">School/college name (<%= i+1 %>)</label>
+                    <div class="input-box-btn">
+                        <input type="text" name="name" id="" class="input<%= i+1 %>" value="<%= (i<data.length)?data[i].name:'' %>">
+                    </div>
+                </div>
+                <div class="input-box">
+                   
+                    <label for="">Course</label>
+                    <div class="input-box-btn">
+                        <input type="text" name="course" id="" class="input<%= i+1 %>" value="<%= (i<data.length)?data[i].course:'' %>">
+                    </div>
+                </div>
+                <div class="date-box">
+                    <label for="">Start Date: <input type="text" placeholder="Format (DD-MM-YYYY)" name="start_date" class="input<%= i+1 %>" id=""  value="<%= (i<data.length)?data[i].start_date:'' %>"></label>
+                    <label for="">End Date:<input type="text" placeholder="Format (DD-MM-YYYY)" name="end_date" class="input<%= i+1 %>" id=""  value="<%= (i<data.length)?data[i].end_date:'' %>"></label>
+                </div>
+                <div class="input-box">
+                    <label for="">Enter CGPA & other accomplishment</label>
+                    <div class="input-box-btn">
+                        <textarea name="others" id=""  rows="3" class="input<%= i+1 %>"><%= (i<data.length)?data[i].others:"" %></textarea>
+                    </div>
+                </div>
+            </main>
+            <% }) %>
+        </div>
+        <div class="buttons">
+            <button class="btn" onclick="saveEducation('<%= num.length %>','education')">Save</button>
+            <button class="btn" onclick="addAnother('<%= num.length %>','education')">Add another</button>
+        </div>
+    <!-- </form> -->
+    </div>
+</div>

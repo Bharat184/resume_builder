@@ -1,0 +1,39 @@
+<div class="main-box">
+    <a href="/"></a>
+    <div class="box">
+        <h2>EXPERIENCE</h2>
+        <% num.forEach((e,i)=>{%>
+            <main>
+                <% if(i>0){%>
+                    <hr>
+                <% } %>
+                <div class="input-box">
+                    <label for="skill">Company/Organization/Personal (<%= i+1 %>)</label>
+                    <div class="input-box-btn">
+                        <input type="text" name="name" id="" class="input<%=i+1%>" value="<%= (i<data.length)?data[i].name:'' %>">
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label for="skill">Role/Job/Title (<%= i+1 %>)</label>
+                    <div class="input-box-btn">
+                        <input type="text" name="role" id="" class="input<%=i+1%>" value="<%= (i<data.length)?data[i].role:'' %>">
+                    </div>
+                </div>
+                <div class="date-box">
+                    <label for="">Start Date: <input type="text" name="start_date" class="input<%=i+1%>" id="" placeholder="Format (DD-MM-YYYY)" value="<%= (i<data.length)?data[i].start_date:'' %>"></label>
+                    <label for="">End Date: <input type="text" name="end_date" class="input<%=i+1%>" id="" placeholder="Format (DD-MM-YYYY)" value="<%= (i<data.length)?data[i].end_date:'' %>"></label>
+                </div>
+                <div class="input-box">
+                    <label for="">Responsibilities & other accomplishment (<%= i+1 %>)</label>
+                    <div class="input-box-btn">
+                        <textarea name="others" id=""  rows="3" class="input<%=i+1%>"><%= (i<data.length)?data[i].others:'' %></textarea>
+                    </div>
+                </div>
+            </main>
+        <% }) %>
+        <div class="buttons">
+            <button class="btn" onclick="saveEducation('<%= num.length %>','experience')">Save</button>
+            <button class="btn" onclick="addAnother('<%= num.length %>','experience')">Add another</button>
+        </div>
+    </div>
+</div>

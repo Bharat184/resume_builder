@@ -1,0 +1,74 @@
+<%- include("./includes/top") %>
+
+<div class="resume" id="resume">
+    <div class="left">
+        <div class="profile">
+            <img src="<%= result[0][0]?result[0][0].imageUrl:''%>" alt="Profile picture">
+            <h2><%= result[0]?result[0][0].name:''%></h2>
+            <hr>
+            <p><%= result[0]?result[0][0].email:''%></p>
+            <p><%= result[0]?result[0][0].phone:''%></p>
+            <p><%= result[0]?result[0][0].profileLink:''%></p>
+        </div>
+        <div class="skills">
+            <h2>Skills</h2><hr>
+            <div>
+            <% if(result[1]){ %>
+                <% result[1].forEach((e)=>{ %>
+                    <p><%= e %></p>
+                <% }) %>
+            <% } %>
+        </div>
+        </div>
+        <div class="achievement">
+            <h2><%= result[5]?"ACHIEVEMENTS":''%></h2>
+            <p><%= result[5]?result[5][0].achievement:''%></p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="summary">
+            <h2><%= result[2]?result[2][0].title:''%></h2>
+            <p><%= result[2]?result[2][0].summary:''%></p>
+        </div>
+        <div class="education">
+            <h2>Education</h2>
+            <% if(result[3]){ %>
+                <% result[3].forEach((e)=>{ %>
+                    <div class="education-child">
+                        <h3><%= e.name %></h3>
+                        <h4>Course: <%= e.course %></h4>
+                         <div class="time">
+                            <p>From: <b><%= e.start_date  %></b></p>
+                            <p>To: <b><%= e.end_date  %></b></p>
+                         </div>
+                         <div class="others">
+                            <%= e.others %>
+                         </div>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+        <div class="education">
+            <h2>Experience/Projects</h2>
+            <% if(result[4]) { %>
+            <% result[4].forEach((e)=>{ %>
+                <div class="education-child">
+                    <h2><%= e.name %></h2>
+                    <h4>Role: <%= e.role %></h4>
+                     <div class="time">
+                        <p>From: <%= e.start_date  %></p>
+                        <p>To: <%= e.end_date  %></p>
+                     </div>
+                     <div class="others">
+                        <%= e.others %>
+                     </div>
+                </div>
+            <% }) %>
+            <% } %>
+        </div>
+        <button id="download">Download</button>
+    </div>
+</div>
+
+
+<%- include("./includes/bottom") %>

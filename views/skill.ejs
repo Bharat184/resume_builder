@@ -1,0 +1,21 @@
+<div class="main-box">
+    <a href="/"></a>
+    <div class="box">
+        <h2>SKILLS</h2>
+        <div class="input-box">
+            <label for="skill">Enter your skills</label>
+            <div class="input-box-btn">
+                <input type="text" name="" id="skill">
+                <i onclick="addskill()">Add</i>
+            </div>
+            <div class="added-skills">
+               <% if(data){ data.forEach((e)=>{ %>
+                    <div><p class="skill"><%= e %></p><i onclick="saveSkill(this)"></i></div>
+                <% })} %>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="btn" onclick="saveSkill()">Save</button>
+        </div>
+    </div>
+</div>

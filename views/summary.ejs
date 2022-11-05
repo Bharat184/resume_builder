@@ -1,0 +1,22 @@
+<div class="main-box">
+    <a href="/"></a>
+    <div class="box">
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <div class="input-box">
+            <label for="skill">Enter the role/job you are looking for </label>
+            <div class="input-box-btn">
+                <input type="text" name="title" class="input1" value="<%= data?data[0].title:'' %>" id="">
+            </div>
+        </div>
+        <div class="input-box">
+            <label for="skill">Give a brief description </label>
+            <div class="input-box-btn">
+                <textarea type="text" name="summary"  id="" rows="10" class="input1"><%= data?data[0].summary:'' %></textarea>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn" onclick="saveEducation(1,'summary')">Save</button>
+        </div>
+    </div>
+</div>
