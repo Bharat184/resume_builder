@@ -3,7 +3,7 @@
 <div class="resume" id="resume">
     <div class="left">
         <div class="profile">
-            <img src="<%= result[0][0]?result[0][0].imageUrl:''%>" alt="Profile picture">
+            <img src="" alt="Profile picture" id="resume_profile_pic">
             <h2><%= result[0]?result[0][0].name:''%></h2>
             <hr>
             <p><%= result[0]?result[0][0].email:''%></p>
@@ -27,7 +27,7 @@
     </div>
     <div class="right">
         <div class="summary">
-            <h2><%= result[2]?result[2][0].title:''%></h2>
+            <h2 class="role"><%= result[2]?result[2][0].title:''%></h2>
             <p><%= result[2]?result[2][0].summary:''%></p>
         </div>
         <div class="education">

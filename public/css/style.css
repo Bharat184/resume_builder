@@ -92,7 +92,11 @@
     }
 }
 
-
+.img_uploaded::after{
+    content:'\2714';
+    color:green;
+    font-weight: bolder;
+}
 .main-box{
     position: fixed;
     inset:0;
@@ -300,7 +304,15 @@
 }
 .summary h2,.education > h2,.achievement > h2{
     padding: 8px 0px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgb(24, 169, 21);
+    text-transform: uppercase;
+}
+.summary .role{
+    text-transform: uppercase;
+    color:rgb(30, 30, 211);
+    margin-bottom: 10px;
+    font-weight: bolder;
+    text-align: center;
 }
 .summary p{
     padding: 4px;
@@ -340,14 +352,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: lightblue;
+    transition: all 0.4s;
 }
-#download::after{
-    content:"\27A4";
-    color:green;
-    font-size: 20px;
-    transform: rotate(90deg) scale(1.1);
-    margin-left: 10px;
-
+#download:hover{
+    background-color: white;
 }
 
 @media only screen and (max-width:500px)

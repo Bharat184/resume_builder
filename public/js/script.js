@@ -1,12 +1,15 @@
 
 var download = document.querySelector('#download');
-download.addEventListener("click", function () {   
-   download.style.display="none";
-   window.print();
-   download.style.display="block";
-    
-
-});
+if(download)
+{
+    download.addEventListener("click", function () {   
+        download.style.display="none";
+        window.print();
+        download.style.display="block";
+         
+     
+     });
+}
 
 //save as cookie send post req to server
 function saveascookie(data,flag=false)
@@ -140,3 +143,48 @@ function saveEducation(no,nme)
     }
 }
 
+//image to base64url
+let img=document.getElementById("img");
+let statusImg=document.getElementById("status");
+if(statusImg)
+{
+    if(localStorage.getItem('img_url')!='null')
+    {
+        statusImg.innerHTML=`<img src='${localStorage.getItem("img_url")}' height='40px' width='40px' alt='no image selected'>`;
+    }
+}
+if(img)
+{
+    img.addEventListener('change',(e)=>{
+        const file=e.target.files[0];
+        let arr=['image/jpeg','image/jpg','image/png'];
+        if(arr.includes(file.type))
+        {
+            const reader=new FileReader();
+            reader.addEventListener('load',()=>{
+                localStorage.setItem('img_url',reader.result);
+                if(statusImg.classList[0]!='img_uploaded')
+                {
+                    statusImg.innerHTML=`<img src='${localStorage.getItem("img_url")}' height='40px' width='40px' >`;
+                }
+                
+            })
+            reader.readAsDataURL(file);
+
+        }
+        else
+        {
+            alert("INVALID FILETYPE")
+        }
+    })
+}
+
+let resume_profile_pic=document.getElementById("resume_profile_pic");
+if(resume_profile_pic)
+{
+    resume_profile_pic.src=localStorage.getItem("img_url");
+}
+if(window.location.pathname=='/clear-resume')
+{
+    localStorage.removeItem("img_url");
+}

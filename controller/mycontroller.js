@@ -5,7 +5,6 @@ function homepage(req,res,next)
 {
    let keys=['skill','education','experience','personal','summary','achievement'];
    let completedSection=Object.keys(req.cookies).map((e)=>{if(keys.includes(e) && req.cookies[e]!=undefined && req.cookies[e].length>0){ return e;}});
-    console.log(completedSection)
     return res.render('home',{title:"Resume",link:'none',arr:completedSection});
 }
 
@@ -18,7 +17,6 @@ function skillpage(req,res,next)
     {
         data=req.cookies.skill;
     }
-    console.log(data);
     return res.render('home',{title:"Resume | skill",link:'skill',data,arr:[]});
 }
 
@@ -116,7 +114,7 @@ function buildresumepage(req,res,next)
            result.push(false);
         }
     })
-    return res.render('resume',{title:"Resume | build",result,link:"resume-builder"});
+    return res.render('resume',{title:"Resume | build",result,link:"resumebuilder"});
 }
 
 
